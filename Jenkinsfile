@@ -14,10 +14,8 @@ pipeline {
         }
         stage ('Go') {
             steps {
-                withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
-                    sh 'go install github.com/CycloneDX/cyclonedx-gomod/cmd/cyclonedx-gomod@latest'
-                    sh 'cd go-project && go build -o pb.exe && cyclonedx-gomod mod -assert-licenses=true -licenses=true -verbose=true -output bom.xml'
-                }   
+                sh 'go install github.com/CycloneDX/cyclonedx-gomod/cmd/cyclonedx-gomod@latest'
+                sh 'cd go-project && go build -o pb.exe && cyclonedx-gomod mod -assert-licenses=true -licenses=true -verbose=true -output bom.xml'   
             }
             post {
                 success {
