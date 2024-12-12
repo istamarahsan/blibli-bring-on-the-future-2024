@@ -24,6 +24,6 @@ COPY --from=build /build/dearearthpb .
 
 COPY ./migrations ./pb_migrations
 
-COPY ./hooks ./pb_hooks
+COPY ./hook[s] ./pb_hooks
 
 CMD ["sh", "-c", "/pb/dearearthpb serve --http=0.0.0.0:${PORT:-8080}"]
