@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dateutil = "*"
+packageurl-python = "*"
+license-expression = "*"
+flask = {extras = ["async"], version = "==3.1.0"}
+flask-cors = "*"
+alembic = {extras = ["tz"], version = "1.14.*"}
+sqlalchemy = "==2.0.36"
+jsonschema = "*"
+aiohttp = "*"
+lxml = "*"
+yarl = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
